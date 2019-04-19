@@ -112,13 +112,17 @@ public class JFrameMenu extends javax.swing.JFrame {
 
     private void jMenuItem1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem1ActionPerformed
         // TODO add your handling code here:
+        showInternalFrame( new JFrameCliente());
     }//GEN-LAST:event_jMenuItem1ActionPerformed
 
     private void jMenuItem2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem2ActionPerformed
-      
-            
-        
+
+
     }//GEN-LAST:event_jMenuItem2ActionPerformed
+    private void showInternalFrame(javax.swing.JFrame jInternalFrame) {
+
+        jInternalFrame.show();
+    }
 
     /**
      * @param args the command line arguments
@@ -169,7 +173,4 @@ public class JFrameMenu extends javax.swing.JFrame {
     private javax.swing.JMenuItem jMenuItem4;
     // End of variables declaration//GEN-END:variables
 
-    private void showInternalFrame(JFrameProducto jframeProducto) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
-    }
 }

@@ -11,5 +11,5 @@ package proyecto.tienda;
  */
 public class lololo {
     int jajaja=0;
-            
+             
 }
