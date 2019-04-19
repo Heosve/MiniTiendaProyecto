@@ -5,6 +5,8 @@
  */
 package Interfaces;
 
+import Interfaces.JFrameProducto;
+
 
 
 /**
@@ -31,6 +33,7 @@ public class JFrameMenu extends javax.swing.JFrame {
 
         jMenuItem4 = new javax.swing.JMenuItem();
         jDialog1 = new javax.swing.JDialog();
+        CPestana = new javax.swing.JDesktopPane();
         jMenuBar1 = new javax.swing.JMenuBar();
         jMenu2 = new javax.swing.JMenu();
         jMenuItem1 = new javax.swing.JMenuItem();
@@ -54,6 +57,17 @@ public class JFrameMenu extends javax.swing.JFrame {
         );
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+
+        javax.swing.GroupLayout CPestanaLayout = new javax.swing.GroupLayout(CPestana);
+        CPestana.setLayout(CPestanaLayout);
+        CPestanaLayout.setHorizontalGroup(
+            CPestanaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 400, Short.MAX_VALUE)
+        );
+        CPestanaLayout.setVerticalGroup(
+            CPestanaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 279, Short.MAX_VALUE)
+        );
 
         jMenu2.setText("Registar");
 
@@ -98,11 +112,11 @@ public class JFrameMenu extends javax.swing.JFrame {
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 400, Short.MAX_VALUE)
+            .addComponent(CPestana)
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 279, Short.MAX_VALUE)
+            .addComponent(CPestana)
         );
 
         pack();
@@ -113,12 +127,16 @@ public class JFrameMenu extends javax.swing.JFrame {
     }//GEN-LAST:event_jMenu4ActionPerformed
 
     private void jMenuItem1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem1ActionPerformed
-        showInternalFrame(new JFrameCliente());
+        JFrameCliente cliente=new JFrameCliente ();
+        this.CPestana.add(cliente);
+        cliente.show();
                 
     }//GEN-LAST:event_jMenuItem1ActionPerformed
 
     private void jMenuItem2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem2ActionPerformed
-      
+      JFrameProducto producto=new JFrameProducto();
+      this.CPestana.add(producto);
+      producto.show();
             
         
     }//GEN-LAST:event_jMenuItem2ActionPerformed
@@ -160,6 +178,7 @@ public class JFrameMenu extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JDesktopPane CPestana;
     private javax.swing.JDialog jDialog1;
     private javax.swing.JMenu jMenu2;
     private javax.swing.JMenu jMenu3;
