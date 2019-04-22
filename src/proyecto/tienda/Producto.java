@@ -21,19 +21,29 @@ public class Producto {
     private int cantidad;
     private double precio;
     private double iva;
+    private double precionConIva;
 
     //Constructor por defecto 
     public Producto() {
     }
 //Constructor por parametros
 
-    public Producto(String nombre, String codigo, Date fecha, int cantidad, double precio, double iva) {
+    public double getPrecionConIva() {
+        return precionConIva;
+    }
+
+    public void setPrecionConIva(double precionConIva) {
+        this.precionConIva = precionConIva;
+    }
+
+    public Producto(String nombre, String codigo, Date fecha, int cantidad, double precio, double iva, double precioConIva) {
         this.nombre = nombre;
         this.codigo = codigo;
         this.fecha = fecha;
         this.cantidad = cantidad;
         this.precio = precio;
         this.iva = iva;
+        this.precionConIva = precioConIva;
     }
 // Getters y Setters (Recordemos que los getters sirven para mostrar el dato y los setters para cambiarlos)
 

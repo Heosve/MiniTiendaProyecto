@@ -26,8 +26,8 @@ public class Tendero extends Persona {
         this.credito = credito;
     }
 
-    public Tendero(String nombreTienda, String numerotelefono, boolean credito, String identiicacion, String nombre, String direccion) {
-        super(identiicacion, nombre, direccion);
+    public Tendero(String nombreTienda, String numerotelefono, boolean credito, String identiicacion, String nombre, String direccion, String NumeroTelefono) {
+        super(identiicacion, nombre, direccion, NumeroTelefono);
         this.nombreTienda = nombreTienda;
         this.numerotelefono = numerotelefono;
         this.credito = credito;
@@ -57,6 +57,14 @@ public class Tendero extends Persona {
         this.credito = credito;
     }
 
+    public String getNumeroTelefono() {
+        return NumeroTelefono;
+    }
+
+    public void setNumeroTelefono(String NumeroTelefono) {
+        this.NumeroTelefono = NumeroTelefono;
+    }
+
     public String getIdentiicacion() {
         return identiicacion;
     }
@@ -83,10 +91,10 @@ public class Tendero extends Persona {
 
     @Override
     public int hashCode() {
-        int hash = 5;
-        hash = 59 * hash + Objects.hashCode(this.nombreTienda);
-        hash = 59 * hash + Objects.hashCode(this.numerotelefono);
-        hash = 59 * hash + (this.credito ? 1 : 0);
+        int hash = 3;
+        hash = 97 * hash + Objects.hashCode(this.nombreTienda);
+        hash = 97 * hash + Objects.hashCode(this.numerotelefono);
+        hash = 97 * hash + (this.credito ? 1 : 0);
         return hash;
     }
 
@@ -119,4 +127,6 @@ public class Tendero extends Persona {
         return "Tendero{" + "nombreTienda=" + nombreTienda + ", numerotelefono=" + numerotelefono + ", credito=" + credito + '}';
     }
 
+
+   
 }

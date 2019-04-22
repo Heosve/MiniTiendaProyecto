@@ -20,8 +20,8 @@ public class Cliente extends Persona {
         this.credito = credito;
     }
 
-    public Cliente(boolean credito, String identiicacion, String nombre, String direccion) {
-        super(identiicacion, nombre, direccion);
+    public Cliente(boolean credito, String identiicacion, String nombre, String direccion, String NumeroTelefono) {
+        super(identiicacion, nombre, direccion, NumeroTelefono);
         this.credito = credito;
     }
 
@@ -31,6 +31,14 @@ public class Cliente extends Persona {
 
     public void setCredito(boolean credito) {
         this.credito = credito;
+    }
+
+    public String getNumeroTelefono() {
+        return NumeroTelefono;
+    }
+
+    public void setNumeroTelefono(String NumeroTelefono) {
+        this.NumeroTelefono = NumeroTelefono;
     }
 
     public String getIdentiicacion() {
@@ -60,7 +68,7 @@ public class Cliente extends Persona {
     @Override
     public int hashCode() {
         int hash = 7;
-        hash = 83 * hash + (this.credito ? 1 : 0);
+        hash = 17 * hash + (this.credito ? 1 : 0);
         return hash;
     }
 
@@ -87,4 +95,6 @@ public class Cliente extends Persona {
         return "Cliente{" + "credito=" + credito + '}';
     }
 
+  
+    
 }

@@ -24,8 +24,8 @@ public class Proveedor extends Persona {
         this.email = email;
     }
 
-    public Proveedor(String nombreEmpresa, String email, String identiicacion, String nombre, String direccion) {
-        super(identiicacion, nombre, direccion);
+    public Proveedor(String nombreEmpresa, String email, String identiicacion, String nombre, String direccion, String NumeroTelefono) {
+        super(identiicacion, nombre, direccion, NumeroTelefono);
         this.nombreEmpresa = nombreEmpresa;
         this.email = email;
     }
@@ -44,6 +44,14 @@ public class Proveedor extends Persona {
 
     public void setEmail(String email) {
         this.email = email;
+    }
+
+    public String getNumeroTelefono() {
+        return NumeroTelefono;
+    }
+
+    public void setNumeroTelefono(String NumeroTelefono) {
+        this.NumeroTelefono = NumeroTelefono;
     }
 
     public String getIdentiicacion() {
@@ -72,9 +80,9 @@ public class Proveedor extends Persona {
 
     @Override
     public int hashCode() {
-        int hash = 5;
-        hash = 29 * hash + Objects.hashCode(this.nombreEmpresa);
-        hash = 29 * hash + Objects.hashCode(this.email);
+        int hash = 7;
+        hash = 47 * hash + Objects.hashCode(this.nombreEmpresa);
+        hash = 47 * hash + Objects.hashCode(this.email);
         return hash;
     }
 
@@ -104,4 +112,5 @@ public class Proveedor extends Persona {
         return "Proveedor{" + "nombreEmpresa=" + nombreEmpresa + ", email=" + email + '}';
     }
 
+ 
 }

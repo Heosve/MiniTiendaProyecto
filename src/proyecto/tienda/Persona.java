@@ -13,6 +13,8 @@ import java.util.Objects;
  */
 public class Persona {
 
+    
+    public String NumeroTelefono;
     public String identiicacion;
     public String nombre;
     public String direccion;
@@ -20,10 +22,19 @@ public class Persona {
     public Persona() {
     }
 
-    public Persona(String identiicacion, String nombre, String direccion) {
+    public Persona(String identiicacion, String nombre, String direccion, String NumeroTelefono) {
         this.identiicacion = identiicacion;
         this.nombre = nombre;
         this.direccion = direccion;
+        this.NumeroTelefono = NumeroTelefono;
+    }
+
+    public String getNumeroTelefono() {
+        return NumeroTelefono;
+    }
+
+    public void setNumeroTelefono(String NumeroTelefono) {
+        this.NumeroTelefono = NumeroTelefono;
     }
 
     public String getIdentiicacion() {
@@ -52,10 +63,11 @@ public class Persona {
 
     @Override
     public int hashCode() {
-        int hash = 5;
-        hash = 89 * hash + Objects.hashCode(this.identiicacion);
-        hash = 89 * hash + Objects.hashCode(this.nombre);
-        hash = 89 * hash + Objects.hashCode(this.direccion);
+        int hash = 7;
+        hash = 73 * hash + Objects.hashCode(this.NumeroTelefono);
+        hash = 73 * hash + Objects.hashCode(this.identiicacion);
+        hash = 73 * hash + Objects.hashCode(this.nombre);
+        hash = 73 * hash + Objects.hashCode(this.direccion);
         return hash;
     }
 
@@ -71,6 +83,9 @@ public class Persona {
             return false;
         }
         final Persona other = (Persona) obj;
+        if (!Objects.equals(this.NumeroTelefono, other.NumeroTelefono)) {
+            return false;
+        }
         if (!Objects.equals(this.identiicacion, other.identiicacion)) {
             return false;
         }
@@ -85,7 +100,7 @@ public class Persona {
 
     @Override
     public String toString() {
-        return "Persona{" + "identiicacion=" + identiicacion + ", nombre=" + nombre + ", direccion=" + direccion + '}';
+        return "Persona{" + "NumeroTelefono=" + NumeroTelefono + ", identiicacion=" + identiicacion + ", nombre=" + nombre + ", direccion=" + direccion + '}';
     }
 
 }

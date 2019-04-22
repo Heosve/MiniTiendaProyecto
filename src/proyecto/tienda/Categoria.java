@@ -7,8 +7,17 @@ package proyecto.tienda;
 
 /**
  *
- * @author Acer
+ * @author Juan José Henao Osor
  */
-public class Categoria {
-
+public enum Categoria {
+    lácteos,  
+    cárnicos,
+    cerelaes,
+    frutasYVerduras,
+    legumbres,
+    frtuosSecos,
+    bebidas,
+    dulces,
+    aceite,
+    
 }

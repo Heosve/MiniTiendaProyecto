@@ -7,8 +7,10 @@ package proyecto.tienda;
 
 /**
  *
- * @author Acer
+ * @author Juan José Henao Osor
  */
-public class Presentacion {
-
+public enum Presentacion {
+    botella,
+    bolsa,
+    unidad,
 }
