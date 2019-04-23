@@ -37,7 +37,7 @@
               </Group>
               <EmptySpace max="-2" attributes="0"/>
               <Group type="103" groupAlignment="0" attributes="0">
-                  <Component id="jTextField3" pref="159" max="32767" attributes="0"/>
+                  <Component id="jTextField3" max="32767" attributes="0"/>
                   <Component id="jTextField4" max="32767" attributes="0"/>
                   <Component id="jTextField1" alignment="0" max="32767" attributes="0"/>
                   <Component id="jTextField2" alignment="0" max="32767" attributes="0"/>
@@ -79,8 +79,9 @@
                   <Component id="jTextField5" alignment="3" min="-2" max="-2" attributes="0"/>
                   <Component id="jLabel5" alignment="3" min="-2" max="-2" attributes="0"/>
               </Group>
-              <EmptySpace max="32767" attributes="0"/>
-              <Component id="jToolBar1" min="-2" pref="63" max="-2" attributes="0"/>
+              <EmptySpace max="-2" attributes="0"/>
+              <Component id="jToolBar1" min="-2" max="-2" attributes="0"/>
+              <EmptySpace pref="15" max="32767" attributes="0"/>
           </Group>
       </Group>
     </DimensionLayout>
@@ -131,14 +132,14 @@
         <Component class="javax.swing.JButton" name="btnprimero">
           <Properties>
             <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-              <Image iconType="2" name="C:\Users\Juan Jos&#xe9; Henao Osor\Desktop\iconoParaProyecto\1486348529-back-backwards-repeat-arrows-arrow_80455.png"/>
+              <Image iconType="3" name="/Imagenes/Primero.png"/>
             </Property>
           </Properties>
         </Component>
         <Component class="javax.swing.JButton" name="btnAtras">
           <Properties>
             <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-              <Image iconType="2" name="C:\Users\Juan Jos&#xe9; Henao Osor\Desktop\iconoParaProyecto\1486348526-arrow-back-backwards-repeat-previous_80453.png"/>
+              <Image iconType="3" name="/Imagenes/Atras.png"/>
             </Property>
             <Property name="focusable" type="boolean" value="false"/>
             <Property name="horizontalTextPosition" type="int" value="0"/>
@@ -148,7 +149,7 @@
         <Component class="javax.swing.JButton" name="btnAdelante">
           <Properties>
             <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-              <Image iconType="2" name="C:\Users\Juan Jos&#xe9; Henao Osor\Desktop\iconoParaProyecto\1486348525-music-forward-front-next-arrow_80457.png"/>
+              <Image iconType="3" name="/Imagenes/Adelante.png"/>
             </Property>
             <Property name="focusable" type="boolean" value="false"/>
             <Property name="horizontalTextPosition" type="int" value="0"/>
@@ -158,7 +159,7 @@
         <Component class="javax.swing.JButton" name="btnUltimo">
           <Properties>
             <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-              <Image iconType="2" name="C:\Users\Juan Jos&#xe9; Henao Osor\Desktop\iconoParaProyecto\1486348528-forward-arrows-arrow-front-go_80452.png"/>
+              <Image iconType="3" name="/Imagenes/Ultimo.png"/>
             </Property>
             <Property name="focusable" type="boolean" value="false"/>
             <Property name="horizontalTextPosition" type="int" value="0"/>
@@ -168,7 +169,7 @@
         <Component class="javax.swing.JButton" name="btnNuevo">
           <Properties>
             <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-              <Image iconType="2" name="C:\Users\Juan Jos&#xe9; Henao Osor\Desktop\iconoParaProyecto\newfile_85903.png"/>
+              <Image iconType="3" name="/Imagenes/Nuevo.png"/>
             </Property>
             <Property name="focusable" type="boolean" value="false"/>
             <Property name="horizontalTextPosition" type="int" value="0"/>
@@ -178,14 +179,14 @@
         <Component class="javax.swing.JButton" name="btnEditar">
           <Properties>
             <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-              <Image iconType="2" name="C:\Users\Juan Jos&#xe9; Henao Osor\Desktop\iconoParaProyecto\edit_modify_icon-icons.com_49882.png"/>
+              <Image iconType="3" name="/Imagenes/Guardar.png"/>
             </Property>
           </Properties>
         </Component>
         <Component class="javax.swing.JButton" name="btnGuardar">
           <Properties>
             <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-              <Image iconType="2" name="C:\Users\Juan Jos&#xe9; Henao Osor\Desktop\iconoParaProyecto\save-button-interface-symbol-of-outlined-diskette_icon-icons.com_73167.png"/>
+              <Image iconType="3" name="/Imagenes/Eliminar.png"/>
             </Property>
             <Property name="focusable" type="boolean" value="false"/>
             <Property name="horizontalTextPosition" type="int" value="0"/>
@@ -195,7 +196,7 @@
         <Component class="javax.swing.JButton" name="btnEliminar">
           <Properties>
             <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-              <Image iconType="2" name="C:\Users\Juan Jos&#xe9; Henao Osor\Desktop\iconoParaProyecto\1487086345-cross_81577.png"/>
+              <Image iconType="3" name="/Imagenes/Editar.png"/>
             </Property>
             <Property name="focusable" type="boolean" value="false"/>
             <Property name="horizontalTextPosition" type="int" value="0"/>

@@ -109,6 +109,50 @@ public class JFrameNuevaVenta extends javax.swing.JInternalFrame {
 
         jLabel9.setText("Subtotal:");
 
+        jToolBar1.setRollover(true);
+
+        btnprimero.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/Primero.png"))); // NOI18N
+        jToolBar1.add(btnprimero);
+
+        btnAtras.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/Atras.png"))); // NOI18N
+        btnAtras.setFocusable(false);
+        btnAtras.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
+        btnAtras.setVerticalTextPosition(javax.swing.SwingConstants.BOTTOM);
+        jToolBar1.add(btnAtras);
+
+        btnAdelante.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/Adelante.png"))); // NOI18N
+        btnAdelante.setFocusable(false);
+        btnAdelante.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
+        btnAdelante.setVerticalTextPosition(javax.swing.SwingConstants.BOTTOM);
+        jToolBar1.add(btnAdelante);
+
+        btnUltimo.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/Ultimo.png"))); // NOI18N
+        btnUltimo.setFocusable(false);
+        btnUltimo.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
+        btnUltimo.setVerticalTextPosition(javax.swing.SwingConstants.BOTTOM);
+        jToolBar1.add(btnUltimo);
+
+        btnNuevo.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/Nuevo.png"))); // NOI18N
+        btnNuevo.setFocusable(false);
+        btnNuevo.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
+        btnNuevo.setVerticalTextPosition(javax.swing.SwingConstants.BOTTOM);
+        jToolBar1.add(btnNuevo);
+
+        btnEditar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/Guardar.png"))); // NOI18N
+        jToolBar1.add(btnEditar);
+
+        btnGuardar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/Eliminar.png"))); // NOI18N
+        btnGuardar.setFocusable(false);
+        btnGuardar.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
+        btnGuardar.setVerticalTextPosition(javax.swing.SwingConstants.BOTTOM);
+        jToolBar1.add(btnGuardar);
+
+        btnEliminar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/Editar.png"))); // NOI18N
+        btnEliminar.setFocusable(false);
+        btnEliminar.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
+        btnEliminar.setVerticalTextPosition(javax.swing.SwingConstants.BOTTOM);
+        jToolBar1.add(btnEliminar);
+
         Cpestana.setLayer(jLabel1, javax.swing.JLayeredPane.DEFAULT_LAYER);
         Cpestana.setLayer(jTextField1, javax.swing.JLayeredPane.DEFAULT_LAYER);
         Cpestana.setLayer(jLabel2, javax.swing.JLayeredPane.DEFAULT_LAYER);
@@ -129,6 +173,7 @@ public class JFrameNuevaVenta extends javax.swing.JInternalFrame {
         Cpestana.setLayer(jLabel7, javax.swing.JLayeredPane.DEFAULT_LAYER);
         Cpestana.setLayer(jLabel8, javax.swing.JLayeredPane.DEFAULT_LAYER);
         Cpestana.setLayer(jLabel9, javax.swing.JLayeredPane.DEFAULT_LAYER);
+        Cpestana.setLayer(jToolBar1, javax.swing.JLayeredPane.DEFAULT_LAYER);
 
         javax.swing.GroupLayout CpestanaLayout = new javax.swing.GroupLayout(Cpestana);
         Cpestana.setLayout(CpestanaLayout);
@@ -150,7 +195,7 @@ public class JFrameNuevaVenta extends javax.swing.JInternalFrame {
                                         .addComponent(jLabel1)
                                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                                         .addComponent(jTextField8, javax.swing.GroupLayout.PREFERRED_SIZE, 86, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                                        .addGap(18, 18, 18)
                                         .addComponent(jLabel3)))
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                                 .addGroup(CpestanaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -185,17 +230,21 @@ public class JFrameNuevaVenta extends javax.swing.JInternalFrame {
                             .addComponent(jLabel5)))
                     .addGroup(CpestanaLayout.createSequentialGroup()
                         .addGap(36, 36, 36)
-                        .addComponent(jCheckBox1)))
-                .addContainerGap(13, Short.MAX_VALUE))
+                        .addComponent(jCheckBox1))
+                    .addGroup(CpestanaLayout.createSequentialGroup()
+                        .addContainerGap()
+                        .addComponent(jToolBar1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addContainerGap(0, Short.MAX_VALUE))
         );
         CpestanaLayout.setVerticalGroup(
             CpestanaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(CpestanaLayout.createSequentialGroup()
                 .addContainerGap()
                 .addGroup(CpestanaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jLabel1)
                     .addGroup(CpestanaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                        .addComponent(jTextField8, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(jLabel1)
+                        .addComponent(jTextField8, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(CpestanaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                         .addComponent(jLabel3)
                         .addComponent(jTextField1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
@@ -225,70 +274,20 @@ public class JFrameNuevaVenta extends javax.swing.JInternalFrame {
                     .addComponent(jTextField2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(jCheckBox1)
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(jToolBar1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(27, Short.MAX_VALUE))
         );
-
-        jToolBar1.setRollover(true);
-
-        btnprimero.setIcon(new javax.swing.ImageIcon("C:\\Users\\Juan José Henao Osor\\Desktop\\iconoParaProyecto\\1486348529-back-backwards-repeat-arrows-arrow_80455.png")); // NOI18N
-        jToolBar1.add(btnprimero);
-
-        btnAtras.setIcon(new javax.swing.ImageIcon("C:\\Users\\Juan José Henao Osor\\Desktop\\iconoParaProyecto\\1486348526-arrow-back-backwards-repeat-previous_80453.png")); // NOI18N
-        btnAtras.setFocusable(false);
-        btnAtras.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
-        btnAtras.setVerticalTextPosition(javax.swing.SwingConstants.BOTTOM);
-        jToolBar1.add(btnAtras);
-
-        btnAdelante.setIcon(new javax.swing.ImageIcon("C:\\Users\\Juan José Henao Osor\\Desktop\\iconoParaProyecto\\1486348525-music-forward-front-next-arrow_80457.png")); // NOI18N
-        btnAdelante.setFocusable(false);
-        btnAdelante.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
-        btnAdelante.setVerticalTextPosition(javax.swing.SwingConstants.BOTTOM);
-        jToolBar1.add(btnAdelante);
-
-        btnUltimo.setIcon(new javax.swing.ImageIcon("C:\\Users\\Juan José Henao Osor\\Desktop\\iconoParaProyecto\\1486348528-forward-arrows-arrow-front-go_80452.png")); // NOI18N
-        btnUltimo.setFocusable(false);
-        btnUltimo.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
-        btnUltimo.setVerticalTextPosition(javax.swing.SwingConstants.BOTTOM);
-        jToolBar1.add(btnUltimo);
-
-        btnNuevo.setIcon(new javax.swing.ImageIcon("C:\\Users\\Juan José Henao Osor\\Desktop\\iconoParaProyecto\\newfile_85903.png")); // NOI18N
-        btnNuevo.setFocusable(false);
-        btnNuevo.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
-        btnNuevo.setVerticalTextPosition(javax.swing.SwingConstants.BOTTOM);
-        jToolBar1.add(btnNuevo);
-
-        btnEditar.setIcon(new javax.swing.ImageIcon("C:\\Users\\Juan José Henao Osor\\Desktop\\iconoParaProyecto\\edit_modify_icon-icons.com_49882.png")); // NOI18N
-        jToolBar1.add(btnEditar);
-
-        btnGuardar.setIcon(new javax.swing.ImageIcon("C:\\Users\\Juan José Henao Osor\\Desktop\\iconoParaProyecto\\save-button-interface-symbol-of-outlined-diskette_icon-icons.com_73167.png")); // NOI18N
-        btnGuardar.setFocusable(false);
-        btnGuardar.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
-        btnGuardar.setVerticalTextPosition(javax.swing.SwingConstants.BOTTOM);
-        jToolBar1.add(btnGuardar);
-
-        btnEliminar.setIcon(new javax.swing.ImageIcon("C:\\Users\\Juan José Henao Osor\\Desktop\\iconoParaProyecto\\1487086345-cross_81577.png")); // NOI18N
-        btnEliminar.setFocusable(false);
-        btnEliminar.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
-        btnEliminar.setVerticalTextPosition(javax.swing.SwingConstants.BOTTOM);
-        jToolBar1.add(btnEliminar);
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addComponent(Cpestana, javax.swing.GroupLayout.Alignment.TRAILING)
-            .addGroup(layout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(jToolBar1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(19, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(Cpestana)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jToolBar1, javax.swing.GroupLayout.PREFERRED_SIZE, 63, javax.swing.GroupLayout.PREFERRED_SIZE))
+            .addComponent(Cpestana, javax.swing.GroupLayout.Alignment.TRAILING)
         );
 
         pack();
