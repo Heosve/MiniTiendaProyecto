@@ -5,6 +5,8 @@
  */
 package proyecto.tienda;
 
+import Archivos.ArchivoProducto;
+
 /**
  *
  * @author Acer
@@ -17,5 +19,5 @@ public class ProyectoTienda {
     public static void main(String[] args) {
         // TODO code application logic here
     }
-    
+
 }

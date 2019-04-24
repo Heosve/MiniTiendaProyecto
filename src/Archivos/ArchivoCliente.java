@@ -92,8 +92,8 @@ public class ArchivoCliente {
                 try {
                     archivo.readBoolean();
                     long posicion = archivo.getFilePointer();
-                    String identificacionActual = archivo.readUTF();
-                    if (identificacion.equals(identificacionActual)) {
+                    String identiicacion = archivo.readUTF();
+                    if (identiicacion.equals(identiicacion)) {
                         archivo.seek(posicion);
                         return posicion;
                     }
