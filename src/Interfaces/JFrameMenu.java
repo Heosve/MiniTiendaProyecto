@@ -196,9 +196,7 @@ public class JFrameMenu extends javax.swing.JFrame {
     }//GEN-LAST:event_jMenuItem6ActionPerformed
 
     private void jMenu1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenu1ActionPerformed
-        JFrameCompra compra =new JFrameCompra ();
-        this.CPestana.add(compra);
-        compra.show();
+        
     }//GEN-LAST:event_jMenu1ActionPerformed
 
     /**
