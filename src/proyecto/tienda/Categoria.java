@@ -19,5 +19,5 @@ public enum Categoria {
     bebidas,
     dulces,
     aceite,
-    
+  
 }
