@@ -1,11 +1,6 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
 package Archivos;
 
-import proyecto.tienda.Cliente;
+import proyecto.tienda.Venta;
 
 import java.io.File;
 import java.io.FileNotFoundException;
@@ -15,18 +10,18 @@ import java.util.ArrayList;
 
 /**
  *
- * @author SEBAS
+ * @author SEBAS Y JUAN
  */
-public class ArchivoCliente {
+public class ArchivoVenta {
 
-    File nuevoArchivo = new File("archClientes.txt");
+    File nuevoArchivo = new File("archventa.txt");
     RandomAccessFile archivo;
-    ArrayList<Cliente> clientes = new ArrayList<>();
+    ArrayList<Venta> ventas = new ArrayList<>();
 
-    public ArchivoCliente() {
+    public ArchivoVenta() {
     }
 
-    public ArchivoCliente(RandomAccessFile archivo) {
+    public ArchivoVenta(RandomAccessFile archivo) {
         this.archivo = archivo;
     }
 
@@ -48,29 +43,28 @@ public class ArchivoCliente {
         }
     }
 
-    public Cliente leer() {
-        Cliente nuevoCliente = new Cliente();
+    public Venta leer() {
+        Venta nuevaVenta = new Venta();
         try {
 
-            nuevoCliente.setCredito(archivo.readBoolean());
-            nuevoCliente.setIdentiicacion(archivo.readUTF());
-            nuevoCliente.setNombre(archivo.readUTF());
-            nuevoCliente.setDireccion(archivo.readUTF());
-            nuevoCliente.setNumeroTelefono(archivo.readUTF());
+            nuevaVenta.setFecha(archivo.readUTF());
+            nuevaVenta.setNombreTienda(archivo.readUTF());
+            nuevaVenta.setCodigoFactura(archivo.readUTF());
+            nuevaVenta.setNitTienda(archivo.readUTF());
 
         } catch (IOException e) {
             System.out.println(e.getMessage());
         }
-        return nuevoCliente;
+        return nuevaVenta;
     }
 
-    public void esccribir(Cliente nuevoCliente) {
+    public void esccribir(Venta nuevaventa) {
         try {
-            archivo.writeBoolean(nuevoCliente.isCredito());
-            archivo.writeUTF(nuevoCliente.identiicacion);
-            archivo.writeUTF(nuevoCliente.nombre);
-            archivo.writeUTF(nuevoCliente.direccion);
-            archivo.writeUTF(nuevoCliente.NumeroTelefono);
+            archivo.writeUTF(nuevaventa.getFecha());
+            archivo.writeUTF(nuevaventa.getNombreTienda());
+            archivo.writeUTF(nuevaventa.getCodigoFactura());
+            archivo.writeUTF(nuevaventa.getNitTienda());
+
         } catch (IOException e) {
             System.out.println(e.getMessage());
         }
@@ -82,7 +76,7 @@ public class ArchivoCliente {
      * igual al del argumento. Si no se encuentra, retorna -1 El puntero del
      * archivo queda posicionado al inicio de la identificación del cliente
      */
-    public long indexOf(String identificacion) {
+    public long indexOf(String CodigoFactura) {
         try {
             boolean finArchivo = false;
             long posicionActual = archivo.getFilePointer();
@@ -90,16 +84,16 @@ public class ArchivoCliente {
 
             do {
                 try {
-                    archivo.readBoolean();
+                    archivo.readUTF(); //Lee Fecha
+                    archivo.readUTF(); //LeeNombreTienda
                     long posicion = archivo.getFilePointer();
-                    String identificacionActual = archivo.readUTF();
-                    if (identificacion.equals(identificacionActual)) {
+                    String CodigoActual = archivo.readUTF();
+                    if (CodigoFactura.equals(CodigoActual)) {
                         archivo.seek(posicion);
                         return posicion;
                     }
-                    archivo.readUTF();      // Lee nombre
-                    archivo.readUTF();      // Lee dirección
-                    archivo.readUTF();      // Lee numero de telefono
+                    archivo.readUTF(); // nit Tienda Fecha
+
                 } catch (IOException e) {
                     System.out.println(e.getMessage());
                     finArchivo = true;
@@ -113,20 +107,20 @@ public class ArchivoCliente {
         return -1;
     }
 
-    public void agregar(Cliente nuevoCliente) {
+    public void agregar(Venta nuevaVenta) {
         try {
-            if (indexOf(nuevoCliente.identiicacion) != -1) {
+            if (indexOf(nuevaVenta.getCodigoFactura()) != -1) {
 
                 archivo.seek(archivo.length());
-                esccribir(nuevoCliente);
+                esccribir(nuevaVenta);
             }
         } catch (IOException e) {
-            System.out.println("ya existe un cliente con el numero de identificacion: " + nuevoCliente.identiicacion);
+            System.out.println("ya existe una venta  con ese numero de codigo: " + nuevaVenta.getCodigoFactura());
         }
 
     }
 
-    public Cliente buscar(String identificacion) {
+    public Venta buscar(String codigoFactura) {
         try {
             boolean finArchivo = false;
             long posicionActual = archivo.getFilePointer();
@@ -134,16 +128,15 @@ public class ArchivoCliente {
 
             do {
                 try {
-                    boolean credito = archivo.readBoolean();
+                    String fecha = archivo.readUTF();
+                    String nombreTienda = archivo.readUTF();
                     long posicion = archivo.getFilePointer();
-                    String identificacionActual = archivo.readUTF();
-                    String nombre = archivo.readUTF();
-                    String direccion = archivo.readUTF();
-                    String numeroTelefono = archivo.readUTF();
+                    String CodigoActual = archivo.readUTF();
+                    String nitTienda= archivo.readUTF();
 
-                    if (identificacion.equals(identificacionActual)) {
+                    if (codigoFactura.equals(CodigoActual)) {
                         archivo.seek(posicion);
-                        return new Cliente(credito, identificacionActual, nombre, direccion, numeroTelefono);
+                        return new Venta(fecha, nombreTienda, nombreTienda,codigoFactura, nitTienda);
                     }
                 } catch (IOException e) {
                     finArchivo = true;
@@ -162,27 +155,26 @@ public class ArchivoCliente {
      * eliminación no tiene éxito, si existen otros archivos relacionados con el
      * cliente que se pretende eliminar.
      */
-    public boolean eliminar(String identificacion) {
+    public boolean eliminar(String codigoFactura) {
 
         boolean borrado = false;
         try {
             boolean finArchivo = false;
             long posicionActual = archivo.getFilePointer();
             archivo.seek(0);
-            clientes = null;
+            ventas = null;
 
             do {
                 try {
-                    boolean credito = archivo.readBoolean();
-                    String identificacionActual = archivo.readUTF();
-                    String nombre = archivo.readUTF();
-                    String direccion = archivo.readUTF();
-                    String numeroTelefono = archivo.readUTF();
-
-                    if (identificacionActual.equals(identificacion)) {
+                    String fecha = archivo.readUTF();
+                    String nombreTienda= archivo.readUTF();
+                    String CodigoActual = archivo.readUTF();
+                    String nitTienda = archivo.readUTF();
+                   
+                    if (CodigoActual.equals(codigoFactura)) {
                         borrado = true;
                     } else {
-                        clientes.add(new Cliente(credito, identificacion, nombre, direccion, numeroTelefono));
+                        ventas.add(new Venta(fecha, nombreTienda, codigoFactura, nitTienda));
                     }
                 } catch (IOException e) {
                     finArchivo = true;
@@ -192,7 +184,7 @@ public class ArchivoCliente {
             nuevoArchivo.delete();
             archivo.close();
             abrir("rw");
-            arrayToArchivo(clientes);
+            arrayToArchivo(ventas);
             archivo.seek(posicionActual);
 
         } catch (IOException e) {
@@ -201,16 +193,15 @@ public class ArchivoCliente {
         return borrado;
     }
 
-    public RandomAccessFile arrayToArchivo(ArrayList<Cliente> clientes) {
+    public RandomAccessFile arrayToArchivo(ArrayList<Venta> Ventas) {
         try {
             archivo.seek(0);
-            for (Cliente c : clientes) {
-                archivo.writeBoolean(c.isCredito());
-                archivo.writeUTF(c.getIdentiicacion());
-                archivo.writeUTF(c.getNombre());
-                archivo.writeUTF(c.getDireccion());
-                archivo.writeUTF(c.getNumeroTelefono());
-            }
+            for (Venta v : Ventas) {
+                archivo.writeUTF(v.getFecha());
+                archivo.writeUTF(v.getNombreTienda());
+                archivo.writeUTF(v.getCodigoFactura());
+                archivo.writeUTF(v.getNitTienda());
+                            }
         } catch (IOException e) {
             System.out.println(e.getMessage());
         }
@@ -222,19 +213,21 @@ public class ArchivoCliente {
      * mantener la integridad referencial se evita modificar el código del
      * registro. Argumentos: identificacion: el código que se buscará en el
      * archivo cliente: un objeto que contiene los nuevos datos del cliente
+     *
+     *
      */
-    public boolean modificar(String identificacionAnterior, String identificacion, String nombre,
-            String direccion, String numeroTelefono) {
+    public boolean modificar(String codigoAnterior, String fecha, String nombreTienda,
+      String codigoFactura ,String nitTienda ) {
 
         boolean modificado = false;
         try {
-            long posicion = indexOf(identificacionAnterior);
+            archivo.writeUTF(fecha);
+            archivo.writeUTF(nombreTienda);
+            long posicion = indexOf(codigoAnterior);
             archivo.seek(posicion);
-            archivo.writeUTF(identificacion);
-            archivo.writeUTF(nombre);
-            archivo.writeUTF(direccion);
-            archivo.writeUTF(numeroTelefono);
-
+             archivo.writeUTF(codigoFactura);
+            archivo.writeUTF(nitTienda);
+       
         } catch (IOException e) {
             System.out.println(e.getMessage());
         }
@@ -247,28 +240,25 @@ public class ArchivoCliente {
      * puntero del archivo se reestablece a la posición que tenía antes de crear
      * la lista.
      */
-
-    public ArrayList<Cliente> getLista() {
+    public ArrayList<Venta> getLista() {
         boolean finArchivo = false;
-        clientes = null;
+        ventas = null;
         try {
             long posicion = archivo.getFilePointer();
             archivo.seek(0);
             do {
                 try {
-                    clientes.add(leer());
+                    ventas.add(leer());
                 } catch (Exception e) {
                     finArchivo = true;
                 }
-            } while (finArchivo==false);
+            } while (finArchivo == false);
             archivo.seek(posicion);
-        }catch (IOException e){
+        } catch (IOException e) {
             System.out.println(e.getMessage());
         }
-            return clientes;
-        }
-    
-    
+        return ventas;
+    }
 
     public void close() throws IOException {
         archivo.close();

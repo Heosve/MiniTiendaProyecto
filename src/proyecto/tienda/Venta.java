@@ -14,7 +14,7 @@ import java.util.Objects;
  */
 public class Venta {
 
-    private Date fecha;
+    private String fecha;
     private String nombreTienda;
     private String codigoFactura;
     private String nitTienda;
@@ -22,18 +22,22 @@ public class Venta {
     public Venta() {
     }
 
-    public Venta(Date fecha, String nombreTienda, String codigoFactura, String nitTienda) {
+    public Venta(String fecha, String nombreTienda, String codigoFactura, String nitTienda) {
         this.fecha = fecha;
         this.nombreTienda = nombreTienda;
         this.codigoFactura = codigoFactura;
         this.nitTienda = nitTienda;
     }
 
-    public Date getFecha() {
+    public Venta(String fecha, String nombreTienda, String nombreTienda0, String codigoFactura, String nitTienda) {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
+
+    public String getFecha() {
         return fecha;
     }
 
-    public void setFecha(Date fecha) {
+    public void setFecha(String fecha) {
         this.fecha = fecha;
     }
 

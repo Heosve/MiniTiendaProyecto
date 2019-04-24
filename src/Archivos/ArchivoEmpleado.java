@@ -5,7 +5,7 @@
  */
 package Archivos;
 
-import proyecto.tienda.Cliente;
+import proyecto.tienda.Tendero;
 
 import java.io.File;
 import java.io.FileNotFoundException;
@@ -17,16 +17,16 @@ import java.util.ArrayList;
  *
  * @author SEBAS
  */
-public class ArchivoCliente {
+public class ArchivoEmpleado {
 
-    File nuevoArchivo = new File("archClientes.txt");
+    File nuevoArchivo = new File("archEmpleados.txt");
     RandomAccessFile archivo;
-    ArrayList<Cliente> clientes = new ArrayList<>();
+    ArrayList<Tendero> clientes = new ArrayList<>();
 
-    public ArchivoCliente() {
+    public ArchivoT() {
     }
 
-    public ArchivoCliente(RandomAccessFile archivo) {
+    public ArchivoTendero(RandomAccessFile archivo) {
         this.archivo = archivo;
     }
 

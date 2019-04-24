@@ -17,36 +17,26 @@ public class Producto {
 
     private String nombre;
     private String codigo;
-    private Date fecha;
+    private String fecha;
     private int cantidad;
     private double precio;
     private double iva;
     private double precionConIva;
 
-    //Constructor por defecto 
     public Producto() {
     }
-//Constructor por parametros
 
-    public double getPrecionConIva() {
-        return precionConIva;
-    }
-
-    public void setPrecionConIva(double precionConIva) {
-        this.precionConIva = precionConIva;
-    }
-
-    public Producto(String nombre, String codigo, Date fecha, int cantidad, double precio, double iva, double precioConIva) {
+    public Producto(String nombre, String codigo, String fecha, int cantidad, double precio, double iva, double precionConIva) {
         this.nombre = nombre;
         this.codigo = codigo;
         this.fecha = fecha;
         this.cantidad = cantidad;
         this.precio = precio;
         this.iva = iva;
-        this.precionConIva = precioConIva;
+        this.precionConIva = precionConIva;
     }
-// Getters y Setters (Recordemos que los getters sirven para mostrar el dato y los setters para cambiarlos)
 
+   
     public String getNombre() {
         return nombre;
     }
@@ -63,11 +53,11 @@ public class Producto {
         this.codigo = codigo;
     }
 
-    public Date getFecha() {
+    public String getFecha() {
         return fecha;
     }
 
-    public void setFecha(Date fecha) {
+    public void setFecha(String fecha) {
         this.fecha = fecha;
     }
 
@@ -94,17 +84,25 @@ public class Producto {
     public void setIva(double iva) {
         this.iva = iva;
     }
-// El Has
+
+    public double getPrecionConIva() {
+        return precionConIva;
+    }
+
+    public void setPrecionConIva(double precionConIva) {
+        this.precionConIva = precionConIva;
+    }
 
     @Override
     public int hashCode() {
-        int hash = 7;
-        hash = 53 * hash + Objects.hashCode(this.nombre);
-        hash = 53 * hash + Objects.hashCode(this.codigo);
-        hash = 53 * hash + Objects.hashCode(this.fecha);
-        hash = 53 * hash + this.cantidad;
-        hash = 53 * hash + (int) (Double.doubleToLongBits(this.precio) ^ (Double.doubleToLongBits(this.precio) >>> 32));
-        hash = 53 * hash + (int) (Double.doubleToLongBits(this.iva) ^ (Double.doubleToLongBits(this.iva) >>> 32));
+        int hash = 3;
+        hash = 29 * hash + Objects.hashCode(this.nombre);
+        hash = 29 * hash + Objects.hashCode(this.codigo);
+        hash = 29 * hash + Objects.hashCode(this.fecha);
+        hash = 29 * hash + this.cantidad;
+        hash = 29 * hash + (int) (Double.doubleToLongBits(this.precio) ^ (Double.doubleToLongBits(this.precio) >>> 32));
+        hash = 29 * hash + (int) (Double.doubleToLongBits(this.iva) ^ (Double.doubleToLongBits(this.iva) >>> 32));
+        hash = 29 * hash + (int) (Double.doubleToLongBits(this.precionConIva) ^ (Double.doubleToLongBits(this.precionConIva) >>> 32));
         return hash;
     }
 
@@ -129,6 +127,9 @@ public class Producto {
         if (Double.doubleToLongBits(this.iva) != Double.doubleToLongBits(other.iva)) {
             return false;
         }
+        if (Double.doubleToLongBits(this.precionConIva) != Double.doubleToLongBits(other.precionConIva)) {
+            return false;
+        }
         if (!Objects.equals(this.nombre, other.nombre)) {
             return false;
         }
@@ -143,7 +144,7 @@ public class Producto {
 
     @Override
     public String toString() {
-        return "Producto{" + "nombre=" + nombre + ", codigo=" + codigo + ", fecha=" + fecha + ", cantidad=" + cantidad + ", precio=" + precio + ", iva=" + iva + '}';
+        return "Producto{" + "nombre=" + nombre + ", codigo=" + codigo + ", fecha=" + fecha + ", cantidad=" + cantidad + ", precio=" + precio + ", iva=" + iva + ", precionConIva=" + precionConIva + '}';
     }
 
 }

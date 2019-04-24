@@ -5,7 +5,9 @@
  */
 package proyecto.tienda;
 
-import java.util.Objects;
+
+
+
 
 /**
  *
@@ -13,9 +15,9 @@ import java.util.Objects;
  */
 public class Tendero extends Persona {
 
-    private String nombreTienda;
-    private String numerotelefono;
-    private boolean credito;
+    public String nombreTienda;
+    public String numerotelefono;
+    public boolean credito;
 
     public Tendero() {
     }
@@ -91,10 +93,10 @@ public class Tendero extends Persona {
 
     @Override
     public int hashCode() {
-        int hash = 3;
-        hash = 97 * hash + Objects.hashCode(this.nombreTienda);
-        hash = 97 * hash + Objects.hashCode(this.numerotelefono);
-        hash = 97 * hash + (this.credito ? 1 : 0);
+        int hash = 7;
+        hash = 59 * hash + Objects.hashCode(this.nombreTienda);
+        hash = 59 * hash + Objects.hashCode(this.numerotelefono);
+        hash = 59 * hash + (this.credito ? 1 : 0);
         return hash;
     }
 
@@ -127,6 +129,6 @@ public class Tendero extends Persona {
         return "Tendero{" + "nombreTienda=" + nombreTienda + ", numerotelefono=" + numerotelefono + ", credito=" + credito + '}';
     }
 
-
+   
    
 }
