@@ -5,6 +5,8 @@
  */
 package proyecto.tienda;
 
+import java.util.Objects;
+
 
 
 
@@ -16,22 +18,19 @@ package proyecto.tienda;
 public class Tendero extends Persona {
 
     public String nombreTienda;
-    public String numerotelefono;
     public boolean credito;
 
     public Tendero() {
     }
 
-    public Tendero(String nombreTienda, String numerotelefono, boolean credito) {
+    public Tendero(String nombreTienda, boolean credito) {
         this.nombreTienda = nombreTienda;
-        this.numerotelefono = numerotelefono;
         this.credito = credito;
     }
 
-    public Tendero(String nombreTienda, String numerotelefono, boolean credito, String identiicacion, String nombre, String direccion, String NumeroTelefono) {
+    public Tendero(String nombreTienda, boolean credito, String identiicacion, String nombre, String direccion, String NumeroTelefono) {
         super(identiicacion, nombre, direccion, NumeroTelefono);
         this.nombreTienda = nombreTienda;
-        this.numerotelefono = numerotelefono;
         this.credito = credito;
     }
 
@@ -41,14 +40,6 @@ public class Tendero extends Persona {
 
     public void setNombreTienda(String nombreTienda) {
         this.nombreTienda = nombreTienda;
-    }
-
-    public String getNumerotelefono() {
-        return numerotelefono;
-    }
-
-    public void setNumerotelefono(String numerotelefono) {
-        this.numerotelefono = numerotelefono;
     }
 
     public boolean isCredito() {
@@ -93,10 +84,9 @@ public class Tendero extends Persona {
 
     @Override
     public int hashCode() {
-        int hash = 7;
-        hash = 59 * hash + Objects.hashCode(this.nombreTienda);
-        hash = 59 * hash + Objects.hashCode(this.numerotelefono);
-        hash = 59 * hash + (this.credito ? 1 : 0);
+        int hash = 3;
+        hash = 53 * hash + Objects.hashCode(this.nombreTienda);
+        hash = 53 * hash + (this.credito ? 1 : 0);
         return hash;
     }
 
@@ -118,17 +108,15 @@ public class Tendero extends Persona {
         if (!Objects.equals(this.nombreTienda, other.nombreTienda)) {
             return false;
         }
-        if (!Objects.equals(this.numerotelefono, other.numerotelefono)) {
-            return false;
-        }
         return true;
     }
 
     @Override
     public String toString() {
-        return "Tendero{" + "nombreTienda=" + nombreTienda + ", numerotelefono=" + numerotelefono + ", credito=" + credito + '}';
+        return "Tendero{" + "nombreTienda=" + nombreTienda + ", credito=" + credito + '}';
     }
 
-   
-   
+    
+  
+ 
 }

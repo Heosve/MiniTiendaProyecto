@@ -44,9 +44,9 @@ public class JFrameCliente extends javax.swing.JInternalFrame {
         btnAdelante = new javax.swing.JButton();
         btnUltimo = new javax.swing.JButton();
         btnNuevo = new javax.swing.JButton();
-        btnEditar = new javax.swing.JButton();
+        btnjaja = new javax.swing.JButton();
         btnGuardar = new javax.swing.JButton();
-        btnEliminar = new javax.swing.JButton();
+        btnEditar = new javax.swing.JButton();
         jLabel6 = new javax.swing.JLabel();
         jTextField6 = new javax.swing.JTextField();
 
@@ -115,8 +115,8 @@ public class JFrameCliente extends javax.swing.JInternalFrame {
         });
         jToolBar1.add(btnNuevo);
 
-        btnEditar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/Guardar.png"))); // NOI18N
-        jToolBar1.add(btnEditar);
+        btnjaja.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/Guardar.png"))); // NOI18N
+        jToolBar1.add(btnjaja);
 
         btnGuardar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/Eliminar.png"))); // NOI18N
         btnGuardar.setFocusable(false);
@@ -124,11 +124,11 @@ public class JFrameCliente extends javax.swing.JInternalFrame {
         btnGuardar.setVerticalTextPosition(javax.swing.SwingConstants.BOTTOM);
         jToolBar1.add(btnGuardar);
 
-        btnEliminar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/Editar.png"))); // NOI18N
-        btnEliminar.setFocusable(false);
-        btnEliminar.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
-        btnEliminar.setVerticalTextPosition(javax.swing.SwingConstants.BOTTOM);
-        jToolBar1.add(btnEliminar);
+        btnEditar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/Editar.png"))); // NOI18N
+        btnEditar.setFocusable(false);
+        btnEditar.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
+        btnEditar.setVerticalTextPosition(javax.swing.SwingConstants.BOTTOM);
+        jToolBar1.add(btnEditar);
 
         jLabel6.setText("Abono:");
 
@@ -209,10 +209,10 @@ public class JFrameCliente extends javax.swing.JInternalFrame {
     private javax.swing.JButton btnAdelante;
     private javax.swing.JButton btnAtras;
     private javax.swing.JButton btnEditar;
-    private javax.swing.JButton btnEliminar;
     private javax.swing.JButton btnGuardar;
     private javax.swing.JButton btnNuevo;
     private javax.swing.JButton btnUltimo;
+    private javax.swing.JButton btnjaja;
     private javax.swing.JButton btnprimero;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;

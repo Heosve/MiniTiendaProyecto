@@ -16,7 +16,7 @@ public class ArchivoProducto {
 
     File nuevoArchivo = new File("archproducto.txt");
     RandomAccessFile archivo;
-    ArrayList<Producto> productos = new ArrayList<>();
+    ArrayList<Producto> productos = new ArrayList<>(100);
 
     public ArchivoProducto() {
     }
@@ -197,6 +197,7 @@ public class ArchivoProducto {
             nuevoArchivo.delete();
             archivo.close();
             abrir("rw");
+            productos.trimToSize();
             arrayToArchivo(productos);
             archivo.seek(posicionActual);
 
@@ -272,6 +273,7 @@ public class ArchivoProducto {
                 }
             } while (finArchivo == false);
             archivo.seek(posicion);
+            productos.trimToSize();
         } catch (IOException e) {
             System.out.println(e.getMessage());
         }

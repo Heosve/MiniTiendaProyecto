@@ -21,7 +21,7 @@ public class ArchivoCliente {
 
     File nuevoArchivo = new File("archClientes.txt");
     RandomAccessFile archivo;
-    ArrayList<Cliente> clientes = new ArrayList<>();
+    ArrayList<Cliente> clientes = new ArrayList<>(100);
 
     public ArchivoCliente() {
     }
@@ -192,6 +192,7 @@ public class ArchivoCliente {
             nuevoArchivo.delete();
             archivo.close();
             abrir("rw");
+            clientes.trimToSize();
             arrayToArchivo(clientes);
             archivo.seek(posicionActual);
 
@@ -262,6 +263,7 @@ public class ArchivoCliente {
                 }
             } while (finArchivo==false);
             archivo.seek(posicion);
+            clientes.trimToSize();
         }catch (IOException e){
             System.out.println(e.getMessage());
         }

@@ -21,7 +21,7 @@ public class ArchivoProveedor {
 
     File nuevoArchivo = new File("archProveedor.txt");
     RandomAccessFile archivo;
-    ArrayList<Proveedor> proveedores = new ArrayList<>();
+    ArrayList<Proveedor> proveedores = new ArrayList<>(100);
 
     public ArchivoProveedor() {
     }
@@ -200,6 +200,7 @@ public class ArchivoProveedor {
             nuevoArchivo.delete();
             archivo.close();
             abrir("rw");
+            proveedores.trimToSize();
             arrayToArchivo(proveedores);
             archivo.seek(posicionActual);
 
@@ -272,6 +273,7 @@ public class ArchivoProveedor {
                 }
             } while (finArchivo == false);
             archivo.seek(posicion);
+            proveedores.trimToSize();
         } catch (IOException e) {
             System.out.println(e.getMessage());
         }

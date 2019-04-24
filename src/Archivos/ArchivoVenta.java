@@ -16,7 +16,7 @@ public class ArchivoVenta {
 
     File nuevoArchivo = new File("archventa.txt");
     RandomAccessFile archivo;
-    ArrayList<Venta> ventas = new ArrayList<>();
+    ArrayList<Venta> ventas = new ArrayList<>(100);
 
     public ArchivoVenta() {
     }
@@ -51,6 +51,7 @@ public class ArchivoVenta {
             nuevaVenta.setNombreTienda(archivo.readUTF());
             nuevaVenta.setCodigoFactura(archivo.readUTF());
             nuevaVenta.setNitTienda(archivo.readUTF());
+            
 
         } catch (IOException e) {
             System.out.println(e.getMessage());
@@ -184,6 +185,7 @@ public class ArchivoVenta {
             nuevoArchivo.delete();
             archivo.close();
             abrir("rw");
+            ventas.trimToSize();
             arrayToArchivo(ventas);
             archivo.seek(posicionActual);
 
@@ -246,6 +248,7 @@ public class ArchivoVenta {
         try {
             long posicion = archivo.getFilePointer();
             archivo.seek(0);
+            
             do {
                 try {
                     ventas.add(leer());
@@ -254,6 +257,7 @@ public class ArchivoVenta {
                 }
             } while (finArchivo == false);
             archivo.seek(posicion);
+            ventas.trimToSize();
         } catch (IOException e) {
             System.out.println(e.getMessage());
         }
